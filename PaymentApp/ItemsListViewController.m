@@ -69,11 +69,11 @@
 
 - (void)loadFromCategoryItem:(CategoryItem*)categoryItem{
     self.title = categoryItem.title;
-    _categoriesTableViewDataSource = [[TableViewDataSource alloc] initWithDataObjects:categoryItem.subs
+    _categoriesTableViewDataSource = [[TableViewDataSource alloc] initWithDataObjects:categoryItem.relationship.allObjects
                                                                  cellConfigurateBlock:configureBlock
                                                                   cellIdentifierBlock:cellIdentifierBlock];
     
-    _categoriesTableViewDelegate = [[TableViewDelegate alloc] initWithDataObjects:categoryItem.subs
+    _categoriesTableViewDelegate = [[TableViewDelegate alloc] initWithDataObjects:categoryItem.relationship.allObjects
                                                              cellConfigurateBlock:configureBlock
                                                               cellIdentifierBlock:cellIdentifierBlock];
     
@@ -83,24 +83,27 @@
 }
 
 - (void)loadFromDataService{
-
     __weak typeof(self) weakSelf = self;
     [_dataService downloadAllItemsWithCompletion:^(NSArray *items, NSError *error) {
         typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf configureTableViewWithItems:items];
         
-        strongSelf.categoriesTableViewDataSource = [[TableViewDataSource alloc] initWithDataObjects:items
-                                                                             cellConfigurateBlock:configureBlock
-                                                                              cellIdentifierBlock:cellIdentifierBlock];
-        
-        strongSelf.categoriesTableViewDelegate = [[TableViewDelegate alloc] initWithDataObjects:items
-                                                                         cellConfigurateBlock:configureBlock
-                                                                          cellIdentifierBlock:cellIdentifierBlock];
-
-        strongSelf.categoriesTableView.delegate   = strongSelf.categoriesTableViewDelegate;
-        strongSelf.categoriesTableView.dataSource = strongSelf.categoriesTableViewDataSource;
-        strongSelf.categoriesTableViewDelegate.delegate = strongSelf;
-        [strongSelf.categoriesTableView reloadData];
     }];
+}
+
+- (void)configureTableViewWithItems:(NSArray*)items{
+    self.categoriesTableViewDataSource = [[TableViewDataSource alloc] initWithDataObjects:items
+                                                                           cellConfigurateBlock:configureBlock
+                                                                            cellIdentifierBlock:cellIdentifierBlock];
+    
+    self.categoriesTableViewDelegate = [[TableViewDelegate alloc] initWithDataObjects:items
+                                                                       cellConfigurateBlock:configureBlock
+                                                                        cellIdentifierBlock:cellIdentifierBlock];
+    
+    self.categoriesTableView.delegate   = self.categoriesTableViewDelegate;
+    self.categoriesTableView.dataSource = self.categoriesTableViewDataSource;
+    self.categoriesTableViewDelegate.delegate = self;
+    [self.categoriesTableView reloadData];
 }
 
 #pragma mark - TableViewDelegate Delegate
@@ -109,7 +112,7 @@
     
     CategoryItem* selectedCategory = (CategoryItem*)selectedObject;
 
-    if (selectedCategory.subs.count == 0)
+    if (selectedCategory.relationship.count == 0)
         return;
 
     

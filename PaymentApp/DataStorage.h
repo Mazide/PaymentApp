@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CategoryItem.h"
+#import <CoreData/CoreData.h>
 
 @interface DataStorage : NSObject
 
-- (void)saveItems:(NSArray*)items withCompletion:(void (^)(NSError* error))completion;
+- (NSArray*)getItems;
 
-- (CategoryItem*)createItem;
+- (NSManagedObject*)createItem;
+
+- (void)saveContext;
 
 @end

@@ -23,12 +23,14 @@
 		A6585B0D1B83C97700F769C7 /* ItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B0C1B83C97700F769C7 /* ItemsListViewController.m */; };
 		A6585B141B83CA0200F769C7 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B131B83CA0200F769C7 /* DataService.m */; };
 		A6585B181B83CB6F00F769C7 /* RequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B171B83CB6F00F769C7 /* RequestCreator.m */; };
-		A6585B1C1B83CE1100F769C7 /* CategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B1B1B83CE1100F769C7 /* CategoryItem.m */; };
 		A6585B201B83D1F800F769C7 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B1F1B83D1F800F769C7 /* CategoryCell.m */; };
 		A6585B231B83D20E00F769C7 /* CategoryCell+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B221B83D20E00F769C7 /* CategoryCell+Configure.m */; };
 		A6585B261B83D22800F769C7 /* MultiLinesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B251B83D22800F769C7 /* MultiLinesLabel.m */; };
 		A6F1A3421B851B8100FE2336 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3411B851B8100FE2336 /* DataStorage.m */; };
 		A6F1A3451B851E7400FE2336 /* PaymentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3431B851E7400FE2336 /* PaymentApp.xcdatamodeld */; };
+		A6F1A34E1B8520DA00FE2336 /* CategoryItem+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A34D1B8520DA00FE2336 /* CategoryItem+Configure.m */; };
+		A6F1A3571B8521B000FE2336 /* CategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3561B8521B000FE2336 /* CategoryItem.m */; };
+		A6F1A3591B85255400FE2336 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F1A3581B85255400FE2336 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +75,6 @@
 		A6585B131B83CA0200F769C7 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		A6585B161B83CB6F00F769C7 /* RequestCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestCreator.h; path = ../RequestCreator.h; sourceTree = "<group>"; };
 		A6585B171B83CB6F00F769C7 /* RequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestCreator.m; path = ../RequestCreator.m; sourceTree = "<group>"; };
-		A6585B1A1B83CE1100F769C7 /* CategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryItem.h; sourceTree = "<group>"; };
-		A6585B1B1B83CE1100F769C7 /* CategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryItem.m; sourceTree = "<group>"; };
 		A6585B1E1B83D1F800F769C7 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		A6585B1F1B83D1F800F769C7 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		A6585B211B83D20E00F769C7 /* CategoryCell+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CategoryCell+Configure.h"; sourceTree = "<group>"; };
@@ -84,6 +84,11 @@
 		A6F1A3401B851B8100FE2336 /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
 		A6F1A3411B851B8100FE2336 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
 		A6F1A3441B851E7400FE2336 /* PaymentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaymentApp.xcdatamodel; sourceTree = "<group>"; };
+		A6F1A34C1B8520DA00FE2336 /* CategoryItem+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CategoryItem+Configure.h"; sourceTree = "<group>"; };
+		A6F1A34D1B8520DA00FE2336 /* CategoryItem+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CategoryItem+Configure.m"; sourceTree = "<group>"; };
+		A6F1A3551B8521B000FE2336 /* CategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryItem.h; sourceTree = "<group>"; };
+		A6F1A3561B8521B000FE2336 /* CategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryItem.m; sourceTree = "<group>"; };
+		A6F1A3581B85255400FE2336 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B2225069E36E8C64199D7FBC /* libPods-PaymentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaymentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F1A3591B85255400FE2336 /* CoreData.framework in Frameworks */,
 				1A80FFEF9A847AB3D4D0B652 /* libPods-PaymentApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +124,7 @@
 		837CEBD7B9B4B45BB2168577 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6F1A3581B85255400FE2336 /* CoreData.framework */,
 				B2225069E36E8C64199D7FBC /* libPods-PaymentApp.a */,
 			);
 			name = Frameworks;
@@ -246,8 +253,10 @@
 		A6585B191B83CDFB00F769C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A6585B1A1B83CE1100F769C7 /* CategoryItem.h */,
-				A6585B1B1B83CE1100F769C7 /* CategoryItem.m */,
+				A6F1A3551B8521B000FE2336 /* CategoryItem.h */,
+				A6F1A3561B8521B000FE2336 /* CategoryItem.m */,
+				A6F1A34C1B8520DA00FE2336 /* CategoryItem+Configure.h */,
+				A6F1A34D1B8520DA00FE2336 /* CategoryItem+Configure.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -419,17 +428,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6585B231B83D20E00F769C7 /* CategoryCell+Configure.m in Sources */,
+				A6F1A3571B8521B000FE2336 /* CategoryItem.m in Sources */,
 				A6585B0D1B83C97700F769C7 /* ItemsListViewController.m in Sources */,
 				A6585B141B83CA0200F769C7 /* DataService.m in Sources */,
 				A6585B001B83C8FB00F769C7 /* TableViewDelegate.m in Sources */,
 				A6585AFF1B83C8FB00F769C7 /* TableViewDataSource.m in Sources */,
+				A6F1A34E1B8520DA00FE2336 /* CategoryItem+Configure.m in Sources */,
 				A6585B071B83C95300F769C7 /* NSDictionary+SafeAccess.m in Sources */,
 				A6585B201B83D1F800F769C7 /* CategoryCell.m in Sources */,
 				A6F1A3451B851E7400FE2336 /* PaymentApp.xcdatamodeld in Sources */,
 				A6F1A3421B851B8100FE2336 /* DataStorage.m in Sources */,
 				A6585B011B83C8FB00F769C7 /* TableViewProtocolsHandler.m in Sources */,
 				A6585B0A1B83C96200F769C7 /* RequestExecutor.m in Sources */,
-				A6585B1C1B83CE1100F769C7 /* CategoryItem.m in Sources */,
 				A6585B181B83CB6F00F769C7 /* RequestCreator.m in Sources */,
 				A6585B061B83C95300F769C7 /* UITableViewCell+CellIndifier.m in Sources */,
 				A6585B261B83D22800F769C7 /* MultiLinesLabel.m in Sources */,
