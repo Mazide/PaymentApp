@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A80FFEF9A847AB3D4D0B652 /* libPods-PaymentApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2225069E36E8C64199D7FBC /* libPods-PaymentApp.a */; };
 		A6585AD61B83C8CF00F769C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AD51B83C8CF00F769C7 /* main.m */; };
 		A6585AD91B83C8CF00F769C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AD81B83C8CF00F769C7 /* AppDelegate.m */; };
-		A6585ADC1B83C8CF00F769C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585ADB1B83C8CF00F769C7 /* ViewController.m */; };
 		A6585ADF1B83C8CF00F769C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6585ADD1B83C8CF00F769C7 /* Main.storyboard */; };
 		A6585AE11B83C8CF00F769C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6585AE01B83C8CF00F769C7 /* Images.xcassets */; };
 		A6585AE41B83C8CF00F769C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6585AE21B83C8CF00F769C7 /* LaunchScreen.xib */; };
 		A6585AF01B83C8CF00F769C7 /* PaymentAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AEF1B83C8CF00F769C7 /* PaymentAppTests.m */; };
+		A6585AFF1B83C8FB00F769C7 /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AFA1B83C8FB00F769C7 /* TableViewDataSource.m */; };
+		A6585B001B83C8FB00F769C7 /* TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AFC1B83C8FB00F769C7 /* TableViewDelegate.m */; };
+		A6585B011B83C8FB00F769C7 /* TableViewProtocolsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AFE1B83C8FB00F769C7 /* TableViewProtocolsHandler.m */; };
+		A6585B061B83C95300F769C7 /* UITableViewCell+CellIndifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B031B83C95300F769C7 /* UITableViewCell+CellIndifier.m */; };
+		A6585B071B83C95300F769C7 /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B051B83C95300F769C7 /* NSDictionary+SafeAccess.m */; };
+		A6585B0A1B83C96200F769C7 /* RequestExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B091B83C96200F769C7 /* RequestExecutor.m */; };
+		A6585B0D1B83C97700F769C7 /* ItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B0C1B83C97700F769C7 /* ItemsListViewController.m */; };
+		A6585B141B83CA0200F769C7 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B131B83CA0200F769C7 /* DataService.m */; };
+		A6585B181B83CB6F00F769C7 /* RequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B171B83CB6F00F769C7 /* RequestCreator.m */; };
+		A6585B1C1B83CE1100F769C7 /* CategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B1B1B83CE1100F769C7 /* CategoryItem.m */; };
+		A6585B201B83D1F800F769C7 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B1F1B83D1F800F769C7 /* CategoryCell.m */; };
+		A6585B231B83D20E00F769C7 /* CategoryCell+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B221B83D20E00F769C7 /* CategoryCell+Configure.m */; };
+		A6585B261B83D22800F769C7 /* MultiLinesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B251B83D22800F769C7 /* MultiLinesLabel.m */; };
+		A6F1A3421B851B8100FE2336 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3411B851B8100FE2336 /* DataStorage.m */; };
+		A6F1A3451B851E7400FE2336 /* PaymentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3431B851E7400FE2336 /* PaymentApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +42,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B44A5B90B8560A395C82AE /* Pods-PaymentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaymentApp/Pods-PaymentApp.release.xcconfig"; sourceTree = "<group>"; };
+		79D5516A1C3543DED85951B8 /* Pods-PaymentApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaymentApp/Pods-PaymentApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A6585AD01B83C8CF00F769C7 /* PaymentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6585AD41B83C8CF00F769C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6585AD51B83C8CF00F769C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6585AD71B83C8CF00F769C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A6585AD81B83C8CF00F769C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A6585ADA1B83C8CF00F769C7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A6585ADB1B83C8CF00F769C7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A6585ADE1B83C8CF00F769C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6585AE01B83C8CF00F769C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A6585AE31B83C8CF00F769C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A6585AE91B83C8CF00F769C7 /* PaymentAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaymentAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6585AEE1B83C8CF00F769C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6585AEF1B83C8CF00F769C7 /* PaymentAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentAppTests.m; sourceTree = "<group>"; };
+		A6585AF91B83C8FB00F769C7 /* TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDataSource.h; sourceTree = "<group>"; };
+		A6585AFA1B83C8FB00F769C7 /* TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDataSource.m; sourceTree = "<group>"; };
+		A6585AFB1B83C8FB00F769C7 /* TableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDelegate.h; sourceTree = "<group>"; };
+		A6585AFC1B83C8FB00F769C7 /* TableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDelegate.m; sourceTree = "<group>"; };
+		A6585AFD1B83C8FB00F769C7 /* TableViewProtocolsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewProtocolsHandler.h; sourceTree = "<group>"; };
+		A6585AFE1B83C8FB00F769C7 /* TableViewProtocolsHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewProtocolsHandler.m; sourceTree = "<group>"; };
+		A6585B021B83C95300F769C7 /* UITableViewCell+CellIndifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CellIndifier.h"; sourceTree = "<group>"; };
+		A6585B031B83C95300F769C7 /* UITableViewCell+CellIndifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+CellIndifier.m"; sourceTree = "<group>"; };
+		A6585B041B83C95300F769C7 /* NSDictionary+SafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeAccess.h"; sourceTree = "<group>"; };
+		A6585B051B83C95300F769C7 /* NSDictionary+SafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeAccess.m"; sourceTree = "<group>"; };
+		A6585B081B83C96200F769C7 /* RequestExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestExecutor.h; sourceTree = "<group>"; };
+		A6585B091B83C96200F769C7 /* RequestExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestExecutor.m; sourceTree = "<group>"; };
+		A6585B0B1B83C97700F769C7 /* ItemsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsListViewController.h; sourceTree = "<group>"; };
+		A6585B0C1B83C97700F769C7 /* ItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsListViewController.m; sourceTree = "<group>"; };
+		A6585B121B83CA0200F769C7 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		A6585B131B83CA0200F769C7 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		A6585B161B83CB6F00F769C7 /* RequestCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestCreator.h; path = ../RequestCreator.h; sourceTree = "<group>"; };
+		A6585B171B83CB6F00F769C7 /* RequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestCreator.m; path = ../RequestCreator.m; sourceTree = "<group>"; };
+		A6585B1A1B83CE1100F769C7 /* CategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryItem.h; sourceTree = "<group>"; };
+		A6585B1B1B83CE1100F769C7 /* CategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryItem.m; sourceTree = "<group>"; };
+		A6585B1E1B83D1F800F769C7 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		A6585B1F1B83D1F800F769C7 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		A6585B211B83D20E00F769C7 /* CategoryCell+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CategoryCell+Configure.h"; sourceTree = "<group>"; };
+		A6585B221B83D20E00F769C7 /* CategoryCell+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CategoryCell+Configure.m"; sourceTree = "<group>"; };
+		A6585B241B83D22800F769C7 /* MultiLinesLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLinesLabel.h; sourceTree = "<group>"; };
+		A6585B251B83D22800F769C7 /* MultiLinesLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLinesLabel.m; sourceTree = "<group>"; };
+		A6F1A3401B851B8100FE2336 /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
+		A6F1A3411B851B8100FE2336 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
+		A6F1A3441B851E7400FE2336 /* PaymentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaymentApp.xcdatamodel; sourceTree = "<group>"; };
+		B2225069E36E8C64199D7FBC /* libPods-PaymentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaymentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A80FFEF9A847AB3D4D0B652 /* libPods-PaymentApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +106,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69D0AA0C7F75E5F6F9425E76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79D5516A1C3543DED85951B8 /* Pods-PaymentApp.debug.xcconfig */,
+				01B44A5B90B8560A395C82AE /* Pods-PaymentApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		837CEBD7B9B4B45BB2168577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2225069E36E8C64199D7FBC /* libPods-PaymentApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A6585AC71B83C8CF00F769C7 = {
 			isa = PBXGroup;
 			children = (
 				A6585AD21B83C8CF00F769C7 /* PaymentApp */,
 				A6585AEC1B83C8CF00F769C7 /* PaymentAppTests */,
 				A6585AD11B83C8CF00F769C7 /* Products */,
+				69D0AA0C7F75E5F6F9425E76 /* Pods */,
+				837CEBD7B9B4B45BB2168577 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,8 +148,13 @@
 			children = (
 				A6585AD71B83C8CF00F769C7 /* AppDelegate.h */,
 				A6585AD81B83C8CF00F769C7 /* AppDelegate.m */,
-				A6585ADA1B83C8CF00F769C7 /* ViewController.h */,
-				A6585ADB1B83C8CF00F769C7 /* ViewController.m */,
+				A6F1A33F1B851B6C00FE2336 /* Storage */,
+				A6585B1D1B83D1E400F769C7 /* Views */,
+				A6585B191B83CDFB00F769C7 /* Model */,
+				A6585B111B83C9E900F769C7 /* Services */,
+				A6585B0F1B83C9B600F769C7 /* Controllers */,
+				A6585B101B83C9C600F769C7 /* Help */,
+				A6585B0E1B83C9A100F769C7 /* TableViewHandle */,
 				A6585ADD1B83C8CF00F769C7 /* Main.storyboard */,
 				A6585AE01B83C8CF00F769C7 /* Images.xcassets */,
 				A6585AE21B83C8CF00F769C7 /* LaunchScreen.xib */,
@@ -119,6 +189,100 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A6585B0E1B83C9A100F769C7 /* TableViewHandle */ = {
+			isa = PBXGroup;
+			children = (
+				A6585AFD1B83C8FB00F769C7 /* TableViewProtocolsHandler.h */,
+				A6585AFE1B83C8FB00F769C7 /* TableViewProtocolsHandler.m */,
+				A6585AF91B83C8FB00F769C7 /* TableViewDataSource.h */,
+				A6585AFA1B83C8FB00F769C7 /* TableViewDataSource.m */,
+				A6585AFB1B83C8FB00F769C7 /* TableViewDelegate.h */,
+				A6585AFC1B83C8FB00F769C7 /* TableViewDelegate.m */,
+			);
+			name = TableViewHandle;
+			sourceTree = "<group>";
+		};
+		A6585B0F1B83C9B600F769C7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6585B0B1B83C97700F769C7 /* ItemsListViewController.h */,
+				A6585B0C1B83C97700F769C7 /* ItemsListViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A6585B101B83C9C600F769C7 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				A6585B021B83C95300F769C7 /* UITableViewCell+CellIndifier.h */,
+				A6585B031B83C95300F769C7 /* UITableViewCell+CellIndifier.m */,
+				A6585B041B83C95300F769C7 /* NSDictionary+SafeAccess.h */,
+				A6585B051B83C95300F769C7 /* NSDictionary+SafeAccess.m */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		A6585B111B83C9E900F769C7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A6585B121B83CA0200F769C7 /* DataService.h */,
+				A6585B131B83CA0200F769C7 /* DataService.m */,
+				A6585B151B83CAB900F769C7 /* Request */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A6585B151B83CAB900F769C7 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A6585B161B83CB6F00F769C7 /* RequestCreator.h */,
+				A6585B171B83CB6F00F769C7 /* RequestCreator.m */,
+				A6585B081B83C96200F769C7 /* RequestExecutor.h */,
+				A6585B091B83C96200F769C7 /* RequestExecutor.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		A6585B191B83CDFB00F769C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6585B1A1B83CE1100F769C7 /* CategoryItem.h */,
+				A6585B1B1B83CE1100F769C7 /* CategoryItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A6585B1D1B83D1E400F769C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6585B271B83D23300F769C7 /* Cell */,
+				A6585B241B83D22800F769C7 /* MultiLinesLabel.h */,
+				A6585B251B83D22800F769C7 /* MultiLinesLabel.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A6585B271B83D23300F769C7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A6585B1E1B83D1F800F769C7 /* CategoryCell.h */,
+				A6585B1F1B83D1F800F769C7 /* CategoryCell.m */,
+				A6585B211B83D20E00F769C7 /* CategoryCell+Configure.h */,
+				A6585B221B83D20E00F769C7 /* CategoryCell+Configure.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		A6F1A33F1B851B6C00FE2336 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A6F1A3401B851B8100FE2336 /* DataStorage.h */,
+				A6F1A3411B851B8100FE2336 /* DataStorage.m */,
+				A6F1A3431B851E7400FE2336 /* PaymentApp.xcdatamodeld */,
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6585AF31B83C8CF00F769C7 /* Build configuration list for PBXNativeTarget "PaymentApp" */;
 			buildPhases = (
+				FFBBFB0772DF749E66DBCF77 /* Check Pods Manifest.lock */,
 				A6585ACC1B83C8CF00F769C7 /* Sources */,
 				A6585ACD1B83C8CF00F769C7 /* Frameworks */,
 				A6585ACE1B83C8CF00F769C7 /* Resources */,
+				A4777665551FE897282D9A82 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,12 +380,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A4777665551FE897282D9A82 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaymentApp/Pods-PaymentApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFBBFB0772DF749E66DBCF77 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A6585ACC1B83C8CF00F769C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6585ADC1B83C8CF00F769C7 /* ViewController.m in Sources */,
+				A6585B231B83D20E00F769C7 /* CategoryCell+Configure.m in Sources */,
+				A6585B0D1B83C97700F769C7 /* ItemsListViewController.m in Sources */,
+				A6585B141B83CA0200F769C7 /* DataService.m in Sources */,
+				A6585B001B83C8FB00F769C7 /* TableViewDelegate.m in Sources */,
+				A6585AFF1B83C8FB00F769C7 /* TableViewDataSource.m in Sources */,
+				A6585B071B83C95300F769C7 /* NSDictionary+SafeAccess.m in Sources */,
+				A6585B201B83D1F800F769C7 /* CategoryCell.m in Sources */,
+				A6F1A3451B851E7400FE2336 /* PaymentApp.xcdatamodeld in Sources */,
+				A6F1A3421B851B8100FE2336 /* DataStorage.m in Sources */,
+				A6585B011B83C8FB00F769C7 /* TableViewProtocolsHandler.m in Sources */,
+				A6585B0A1B83C96200F769C7 /* RequestExecutor.m in Sources */,
+				A6585B1C1B83CE1100F769C7 /* CategoryItem.m in Sources */,
+				A6585B181B83CB6F00F769C7 /* RequestCreator.m in Sources */,
+				A6585B061B83C95300F769C7 /* UITableViewCell+CellIndifier.m in Sources */,
+				A6585B261B83D22800F769C7 /* MultiLinesLabel.m in Sources */,
 				A6585AD91B83C8CF00F769C7 /* AppDelegate.m in Sources */,
 				A6585AD61B83C8CF00F769C7 /* main.m in Sources */,
 			);
@@ -347,6 +560,7 @@
 		};
 		A6585AF41B83C8CF00F769C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D5516A1C3543DED85951B8 /* Pods-PaymentApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PaymentApp/Info.plist;
@@ -357,6 +571,7 @@
 		};
 		A6585AF51B83C8CF00F769C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B44A5B90B8560A395C82AE /* Pods-PaymentApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PaymentApp/Info.plist;
@@ -418,6 +633,7 @@
 				A6585AF51B83C8CF00F769C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6585AF61B83C8CF00F769C7 /* Build configuration list for PBXNativeTarget "PaymentAppTests" */ = {
 			isa = XCConfigurationList;
@@ -426,8 +642,22 @@
 				A6585AF81B83C8CF00F769C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A6F1A3431B851E7400FE2336 /* PaymentApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A6F1A3441B851E7400FE2336 /* PaymentApp.xcdatamodel */,
+			);
+			currentVersion = A6F1A3441B851E7400FE2336 /* PaymentApp.xcdatamodel */;
+			path = PaymentApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A6585AC81B83C8CF00F769C7 /* Project object */;
 }

@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  CategoryCell.m
 //  PaymentApp
 //
 //  Created by Nikita Demidov on 18.08.15.
 //  Copyright (c) 2015 Nikita Demidov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CategoryCell.h"
 
-@interface ViewController : UIViewController
-
+@implementation CategoryCell
 
 @end
-
