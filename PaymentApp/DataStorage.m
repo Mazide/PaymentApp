@@ -15,21 +15,53 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+@property (copy, nonatomic) NSString* entityName;
+@property (strong, nonatomic) NSSortDescriptor* sortDescriptor;
+@property (strong, nonatomic) NSPredicate* mainCategotyPredicate;
+
 @end
 
 @implementation DataStorage
 
-- (NSArray *)getItems{
+- (instancetype)initWithEntity:(NSString *)entityName SortDescriptor:(NSSortDescriptor *)sortDescriptor predicate:(NSPredicate *)mainCategotyPredicate{
+    self = [super init];
+    if (self) {
+        _entityName            = [entityName copy];
+        _sortDescriptor        = sortDescriptor;
+        _mainCategotyPredicate = mainCategotyPredicate;
+    }
+    return self;
+}
+
+- (NSArray *)getMainCategories{
     return self.fetchedResultsController.fetchedObjects;
 }
 
--(NSManagedObject *)createItem{
+-(NSManagedObject *)createCategory{
     
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     
     NSEntityDescription *entity       = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:managedObjectContext];
     return newManagedObject;
+}
+
+- (void)clean{
+    [self deleteAllObjects:_entityName];
+}
+
+- (void) deleteAllObjects: (NSString *) entityDescription  {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    
+    for (NSManagedObject *managedObject in items) {
+        [_managedObjectContext deleteObject:managedObject];
+    }
 }
 
 #pragma mark - Core Data stack
@@ -52,26 +84,23 @@
 }
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it.
+
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    
-    // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"PaymentApp"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        // Report any error we got.
+
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
         dict[NSLocalizedFailureReasonErrorKey] = failureReason;
         dict[NSUnderlyingErrorKey] = error;
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        // Replace this with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+    
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -81,7 +110,7 @@
 
 
 - (NSManagedObjectContext *)managedObjectContext {
-    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
@@ -97,13 +126,12 @@
 
 #pragma mark - Core Data Saving support
 
-- (void)saveContext {
+- (void)saveChanges {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
@@ -119,29 +147,20 @@
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CategoryItem" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:_entityName inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
+    [fetchRequest setSortDescriptors:@[_sortDescriptor]];
+    [fetchRequest setPredicate:_mainCategotyPredicate];
     
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     self.fetchedResultsController = aFetchedResultsController;
     
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+          NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     

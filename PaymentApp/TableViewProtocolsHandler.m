@@ -10,13 +10,15 @@
 
 @implementation TableViewProtocolsHandler
 
-- (instancetype)initWithDataObjects:(NSArray *)dataObjects cellConfigurateBlock:(CellConfigureBlock)cellConfigurateBlock cellIdentifierBlock:(CellIdentifierForIndexPathBlock)cellIdentifierBlock{
+-(instancetype)initWithDataObjects:(NSArray *)dataObjects
+              cellConfigurateBlock:(CellConfigureBlock)cellConfigurateBlock
+                    cellIdentifier:(NSString *)cellIdentifier{
     
     self = [super init];
     if (self) {
         _dataObjects        = dataObjects;
         _cellConfigureBlock = [cellConfigurateBlock copy];
-        _cellIdentifierForIndexPathBlock = [cellIdentifierBlock copy];
+        _cellIdentifier     = [cellIdentifier copy];
     }
     return self;
 }

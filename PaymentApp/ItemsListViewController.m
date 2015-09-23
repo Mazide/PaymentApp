@@ -13,7 +13,6 @@
 #import "RequestExecutor.h"
 
 #import "TableViewDataSource.h"
-#import "TableViewDelegate.h"
 #import "TableViewProtocolsHandler.h"
 
 #import "DataService.h"
@@ -23,26 +22,30 @@
 #import "UITableViewCell+CellIndifier.h"
 #import "CategoryItem.h"
 
-@interface ItemsListViewController () <TableViewDelegateDelegate>
+@interface ItemsListViewController () <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *categoriesTableView;
 
 @property (strong, nonatomic) TableViewDataSource* categoriesTableViewDataSource;
-@property (strong, nonatomic) TableViewDelegate* categoriesTableViewDelegate;
 
 @property (strong, nonatomic) NSArray* categories;
 
 @property (strong, nonatomic) DataService* dataService;
 
+@property (weak, nonatomic) UIRefreshControl* refreshControl;
+
 @end
 
 @implementation ItemsListViewController{
     CellConfigureBlock configureBlock;
-    CellIdentifierForIndexPathBlock cellIdentifierBlock;
+    NSString* cellIdentifier;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initRefreshControll];
+    self.categoriesTableView.delegate = self;
     
     _dataService = [DataService sharedService];
     
@@ -50,16 +53,17 @@
         [(CategoryCell*)cell configureWithCategory:infoObject];
     };
     
-    NSString* cellIdentifier = [CategoryCell cellIdentifier];
-    cellIdentifierBlock = ^ NSString* (NSIndexPath* indexPath){
-        return cellIdentifier;
-    };
+    cellIdentifier = [CategoryCell cellIdentifier];
     
-    if (_selectedCategory) {
-        [self loadFromCategoryItem:_selectedCategory];
-    } else {
-        [self loadFromDataService];
-    }
+    [self loadCategoriesFromDataStorage:NO];
+}
+
+- (void)initRefreshControll{
+    UIRefreshControl* refreshControl = [[UIRefreshControl alloc] init];
+    [_categoriesTableView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updateTableView) forControlEvents:UIControlEventValueChanged];
+    
+    _refreshControl = refreshControl;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,59 +71,67 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadFromCategoryItem:(CategoryItem*)categoryItem{
+#pragma mark - info loading
+
+- (void)loadCategoriesFromDataStorage:(BOOL)loadFromLocalDataStorage{
+    if (_selectedCategory) {
+        _categories = _selectedCategory.relationship.allObjects;
+        [self configureTableViewWithCategoryItem:_selectedCategory];
+        return;
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    [_dataService downloadAllItems:loadFromLocalDataStorage completion:^(NSArray *items, NSError *error) {
+        typeof(weakSelf) strongSelf = weakSelf;
+
+        strongSelf.categories = items;
+
+        [strongSelf configureTableViewWithItems:items];
+    }];
+}
+
+#pragma mark - UITableView Manage
+
+- (void)configureTableViewWithItems:(NSArray*)items{
+    self.categoriesTableViewDataSource = [[TableViewDataSource alloc] initWithDataObjects:items
+                                                                     cellConfigurateBlock:configureBlock
+                                                                           cellIdentifier:cellIdentifier];
+    
+    self.categoriesTableView.dataSource = self.categoriesTableViewDataSource;
+    [self.categoriesTableView reloadData];
+}
+
+- (void)configureTableViewWithCategoryItem:(CategoryItem*)categoryItem{
     self.title = categoryItem.title;
     _categoriesTableViewDataSource = [[TableViewDataSource alloc] initWithDataObjects:categoryItem.relationship.allObjects
                                                                  cellConfigurateBlock:configureBlock
-                                                                  cellIdentifierBlock:cellIdentifierBlock];
+                                                                       cellIdentifier:cellIdentifier];
     
-    _categoriesTableViewDelegate = [[TableViewDelegate alloc] initWithDataObjects:categoryItem.relationship.allObjects
-                                                             cellConfigurateBlock:configureBlock
-                                                              cellIdentifierBlock:cellIdentifierBlock];
-    
-    _categoriesTableView.delegate   = _categoriesTableViewDelegate;
     _categoriesTableView.dataSource = _categoriesTableViewDataSource;
     [_categoriesTableView reloadData];
 }
 
-- (void)loadFromDataService{
-    __weak typeof(self) weakSelf = self;
-    [_dataService downloadAllItemsWithCompletion:^(NSArray *items, NSError *error) {
-        typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf configureTableViewWithItems:items];
-        
-    }];
+#pragma mark - UI actions
+
+- (void)updateTableView{
+    [self loadCategoriesFromDataStorage:YES];
+    [_refreshControl endRefreshing];
 }
 
-- (void)configureTableViewWithItems:(NSArray*)items{
-    self.categoriesTableViewDataSource = [[TableViewDataSource alloc] initWithDataObjects:items
-                                                                           cellConfigurateBlock:configureBlock
-                                                                            cellIdentifierBlock:cellIdentifierBlock];
-    
-    self.categoriesTableViewDelegate = [[TableViewDelegate alloc] initWithDataObjects:items
-                                                                       cellConfigurateBlock:configureBlock
-                                                                        cellIdentifierBlock:cellIdentifierBlock];
-    
-    self.categoriesTableView.delegate   = self.categoriesTableViewDelegate;
-    self.categoriesTableView.dataSource = self.categoriesTableViewDataSource;
-    self.categoriesTableViewDelegate.delegate = self;
-    [self.categoriesTableView reloadData];
-}
+#pragma mark - UITableViewDelegate
 
-#pragma mark - TableViewDelegate Delegate
-
--(void)tableViewDelegate:(TableViewDelegate *)tableViewDelegate didSelectObject:(id)selectedObject{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    CategoryItem* selectedCategory = (CategoryItem*)selectedObject;
-
+    CategoryItem* selectedCategory = (CategoryItem*)_categories[indexPath.row];
+    
     if (selectedCategory.relationship.count == 0)
         return;
-
     
     ItemsListViewController *itemsListViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:NULL] instantiateViewControllerWithIdentifier:@"ItemsListViewController"];
     
     itemsListViewController.selectedCategory = selectedCategory;
     [self.navigationController pushViewController:itemsListViewController animated:YES];
 }
+
 
 @end

@@ -20,11 +20,12 @@ NSString * const subsKey  = @"subs";
 
     self.categoryID = [itemInfo valueForKey:idKey ifKindOf:[NSNumber class] defaultValue:@(0)];
     self.title      = [itemInfo valueForKey:titleKey ifKindOf:[NSString class] defaultValue:nil];
+    self.timeStamp  = [NSDate date];
     
     NSArray* subsInfoArray = [itemInfo valueForKey:subsKey ifKindOf:[NSArray class] defaultValue:nil];
 
     for (NSDictionary* subinfo in subsInfoArray) {
-        CategoryItem* subItem = (CategoryItem*)[dataStorage createItem];
+        CategoryItem* subItem = (CategoryItem*)[dataStorage createCategory];
         [subItem configureWithItemInfo:subinfo dataStorage:dataStorage];
         [self addRelationshipObject:subItem];
     }

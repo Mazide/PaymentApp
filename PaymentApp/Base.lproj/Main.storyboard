@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Категории-->
+        <!--Items List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ItemsListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ItemsListViewController" sceneMemberID="viewController">
@@ -26,10 +26,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fdp-9f-rzP" id="YHm-KH-0gW">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K22-3v-XH6" customClass="MultiLinesLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K22-3v-XH6">
                                                     <rect key="frame" x="8" y="8" width="584" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="kjF-JE-KDT"/>
+                                                        <constraint firstAttribute="height" constant="45" id="H91-ik-ezz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,10 +37,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="K22-3v-XH6" firstAttribute="bottom" secondItem="YHm-KH-0gW" secondAttribute="bottomMargin" id="N0M-aS-onc"/>
-                                                <constraint firstItem="K22-3v-XH6" firstAttribute="leading" secondItem="YHm-KH-0gW" secondAttribute="leadingMargin" id="nj0-Dx-rC1"/>
-                                                <constraint firstItem="K22-3v-XH6" firstAttribute="top" secondItem="YHm-KH-0gW" secondAttribute="topMargin" id="uBN-FO-O9E"/>
-                                                <constraint firstItem="K22-3v-XH6" firstAttribute="trailing" secondItem="YHm-KH-0gW" secondAttribute="trailingMargin" id="weo-op-U0F"/>
+                                                <constraint firstItem="K22-3v-XH6" firstAttribute="leading" secondItem="YHm-KH-0gW" secondAttribute="leadingMargin" id="Qrv-9N-ipy"/>
+                                                <constraint firstItem="K22-3v-XH6" firstAttribute="top" secondItem="YHm-KH-0gW" secondAttribute="topMargin" id="TRF-YE-zGM"/>
+                                                <constraint firstItem="K22-3v-XH6" firstAttribute="trailing" secondItem="YHm-KH-0gW" secondAttribute="trailingMargin" id="Wam-7B-Y1H"/>
+                                                <constraint firstItem="K22-3v-XH6" firstAttribute="bottom" secondItem="YHm-KH-0gW" secondAttribute="bottomMargin" id="h6m-a1-NZw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -58,7 +58,7 @@
                             <constraint firstItem="sS0-9p-zSJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="tHU-Vm-aC8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Категории" id="dra-Jb-vgi"/>
+                    <navigationItem key="navigationItem" id="dra-Jb-vgi"/>
                     <connections>
                         <outlet property="categoriesTableView" destination="sS0-9p-zSJ" id="MEN-Gn-ufz"/>
                     </connections>

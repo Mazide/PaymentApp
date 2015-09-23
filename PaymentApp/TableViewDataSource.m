@@ -19,9 +19,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString* cellIdentifier = self.cellIdentifierForIndexPathBlock ? self.cellIdentifierForIndexPathBlock(indexPath) : nil;
-    UITableViewCell* cell    = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
-                                                               forIndexPath:indexPath];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier
+                                                            forIndexPath:indexPath];
     id dataObject = self.dataObjects[indexPath.row];
     self.cellConfigureBlock(cell, dataObject, indexPath);
     return cell;

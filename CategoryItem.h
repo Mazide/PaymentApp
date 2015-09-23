@@ -2,7 +2,7 @@
 //  CategoryItem.h
 //  
 //
-//  Created by Nikita Demidov on 19.08.15.
+//  Created by Nikita Demidov on 20.08.15.
 //
 //
 

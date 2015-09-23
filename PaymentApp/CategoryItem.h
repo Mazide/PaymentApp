@@ -1,9 +1,9 @@
 //
 //  CategoryItem.h
-//  
+//  PaymentApp
 //
-//  Created by Nikita Demidov on 19.08.15.
-//
+//  Created by Nikita Demidov on 21.08.15.
+//  Copyright (c) 2015 Nikita Demidov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSNumber * categoryID;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSSet *relationship;
 @end
 

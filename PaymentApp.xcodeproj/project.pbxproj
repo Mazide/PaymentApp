@@ -15,7 +15,6 @@
 		A6585AE41B83C8CF00F769C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6585AE21B83C8CF00F769C7 /* LaunchScreen.xib */; };
 		A6585AF01B83C8CF00F769C7 /* PaymentAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AEF1B83C8CF00F769C7 /* PaymentAppTests.m */; };
 		A6585AFF1B83C8FB00F769C7 /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AFA1B83C8FB00F769C7 /* TableViewDataSource.m */; };
-		A6585B001B83C8FB00F769C7 /* TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AFC1B83C8FB00F769C7 /* TableViewDelegate.m */; };
 		A6585B011B83C8FB00F769C7 /* TableViewProtocolsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585AFE1B83C8FB00F769C7 /* TableViewProtocolsHandler.m */; };
 		A6585B061B83C95300F769C7 /* UITableViewCell+CellIndifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B031B83C95300F769C7 /* UITableViewCell+CellIndifier.m */; };
 		A6585B071B83C95300F769C7 /* NSDictionary+SafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B051B83C95300F769C7 /* NSDictionary+SafeAccess.m */; };
@@ -25,11 +24,10 @@
 		A6585B181B83CB6F00F769C7 /* RequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B171B83CB6F00F769C7 /* RequestCreator.m */; };
 		A6585B201B83D1F800F769C7 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B1F1B83D1F800F769C7 /* CategoryCell.m */; };
 		A6585B231B83D20E00F769C7 /* CategoryCell+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B221B83D20E00F769C7 /* CategoryCell+Configure.m */; };
-		A6585B261B83D22800F769C7 /* MultiLinesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6585B251B83D22800F769C7 /* MultiLinesLabel.m */; };
+		A6EDF2A91B8687CA00CEB4B6 /* CategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EDF2A81B8687CA00CEB4B6 /* CategoryItem.m */; };
 		A6F1A3421B851B8100FE2336 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3411B851B8100FE2336 /* DataStorage.m */; };
 		A6F1A3451B851E7400FE2336 /* PaymentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3431B851E7400FE2336 /* PaymentApp.xcdatamodeld */; };
 		A6F1A34E1B8520DA00FE2336 /* CategoryItem+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A34D1B8520DA00FE2336 /* CategoryItem+Configure.m */; };
-		A6F1A3571B8521B000FE2336 /* CategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1A3561B8521B000FE2336 /* CategoryItem.m */; };
 		A6F1A3591B85255400FE2336 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F1A3581B85255400FE2336 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +57,6 @@
 		A6585AEF1B83C8CF00F769C7 /* PaymentAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentAppTests.m; sourceTree = "<group>"; };
 		A6585AF91B83C8FB00F769C7 /* TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDataSource.h; sourceTree = "<group>"; };
 		A6585AFA1B83C8FB00F769C7 /* TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDataSource.m; sourceTree = "<group>"; };
-		A6585AFB1B83C8FB00F769C7 /* TableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDelegate.h; sourceTree = "<group>"; };
-		A6585AFC1B83C8FB00F769C7 /* TableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDelegate.m; sourceTree = "<group>"; };
 		A6585AFD1B83C8FB00F769C7 /* TableViewProtocolsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewProtocolsHandler.h; sourceTree = "<group>"; };
 		A6585AFE1B83C8FB00F769C7 /* TableViewProtocolsHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewProtocolsHandler.m; sourceTree = "<group>"; };
 		A6585B021B83C95300F769C7 /* UITableViewCell+CellIndifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+CellIndifier.h"; sourceTree = "<group>"; };
@@ -79,15 +75,13 @@
 		A6585B1F1B83D1F800F769C7 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		A6585B211B83D20E00F769C7 /* CategoryCell+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CategoryCell+Configure.h"; sourceTree = "<group>"; };
 		A6585B221B83D20E00F769C7 /* CategoryCell+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CategoryCell+Configure.m"; sourceTree = "<group>"; };
-		A6585B241B83D22800F769C7 /* MultiLinesLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLinesLabel.h; sourceTree = "<group>"; };
-		A6585B251B83D22800F769C7 /* MultiLinesLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLinesLabel.m; sourceTree = "<group>"; };
+		A6EDF2A71B8687CA00CEB4B6 /* CategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryItem.h; sourceTree = "<group>"; };
+		A6EDF2A81B8687CA00CEB4B6 /* CategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryItem.m; sourceTree = "<group>"; };
 		A6F1A3401B851B8100FE2336 /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
 		A6F1A3411B851B8100FE2336 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
 		A6F1A3441B851E7400FE2336 /* PaymentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaymentApp.xcdatamodel; sourceTree = "<group>"; };
 		A6F1A34C1B8520DA00FE2336 /* CategoryItem+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CategoryItem+Configure.h"; sourceTree = "<group>"; };
 		A6F1A34D1B8520DA00FE2336 /* CategoryItem+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CategoryItem+Configure.m"; sourceTree = "<group>"; };
-		A6F1A3551B8521B000FE2336 /* CategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryItem.h; sourceTree = "<group>"; };
-		A6F1A3561B8521B000FE2336 /* CategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryItem.m; sourceTree = "<group>"; };
 		A6F1A3581B85255400FE2336 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B2225069E36E8C64199D7FBC /* libPods-PaymentApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaymentApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -203,8 +197,6 @@
 				A6585AFE1B83C8FB00F769C7 /* TableViewProtocolsHandler.m */,
 				A6585AF91B83C8FB00F769C7 /* TableViewDataSource.h */,
 				A6585AFA1B83C8FB00F769C7 /* TableViewDataSource.m */,
-				A6585AFB1B83C8FB00F769C7 /* TableViewDelegate.h */,
-				A6585AFC1B83C8FB00F769C7 /* TableViewDelegate.m */,
 			);
 			name = TableViewHandle;
 			sourceTree = "<group>";
@@ -253,8 +245,8 @@
 		A6585B191B83CDFB00F769C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A6F1A3551B8521B000FE2336 /* CategoryItem.h */,
-				A6F1A3561B8521B000FE2336 /* CategoryItem.m */,
+				A6EDF2A71B8687CA00CEB4B6 /* CategoryItem.h */,
+				A6EDF2A81B8687CA00CEB4B6 /* CategoryItem.m */,
 				A6F1A34C1B8520DA00FE2336 /* CategoryItem+Configure.h */,
 				A6F1A34D1B8520DA00FE2336 /* CategoryItem+Configure.m */,
 			);
@@ -265,8 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				A6585B271B83D23300F769C7 /* Cell */,
-				A6585B241B83D22800F769C7 /* MultiLinesLabel.h */,
-				A6585B251B83D22800F769C7 /* MultiLinesLabel.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -428,10 +418,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6585B231B83D20E00F769C7 /* CategoryCell+Configure.m in Sources */,
-				A6F1A3571B8521B000FE2336 /* CategoryItem.m in Sources */,
 				A6585B0D1B83C97700F769C7 /* ItemsListViewController.m in Sources */,
 				A6585B141B83CA0200F769C7 /* DataService.m in Sources */,
-				A6585B001B83C8FB00F769C7 /* TableViewDelegate.m in Sources */,
 				A6585AFF1B83C8FB00F769C7 /* TableViewDataSource.m in Sources */,
 				A6F1A34E1B8520DA00FE2336 /* CategoryItem+Configure.m in Sources */,
 				A6585B071B83C95300F769C7 /* NSDictionary+SafeAccess.m in Sources */,
@@ -442,9 +430,9 @@
 				A6585B0A1B83C96200F769C7 /* RequestExecutor.m in Sources */,
 				A6585B181B83CB6F00F769C7 /* RequestCreator.m in Sources */,
 				A6585B061B83C95300F769C7 /* UITableViewCell+CellIndifier.m in Sources */,
-				A6585B261B83D22800F769C7 /* MultiLinesLabel.m in Sources */,
 				A6585AD91B83C8CF00F769C7 /* AppDelegate.m in Sources */,
 				A6585AD61B83C8CF00F769C7 /* main.m in Sources */,
+				A6EDF2A91B8687CA00CEB4B6 /* CategoryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,9 +1,9 @@
 //
 //  CategoryItem.m
-//  
+//  PaymentApp
 //
-//  Created by Nikita Demidov on 19.08.15.
-//
+//  Created by Nikita Demidov on 21.08.15.
+//  Copyright (c) 2015 Nikita Demidov. All rights reserved.
 //
 
 #import "CategoryItem.h"
@@ -14,6 +14,7 @@
 
 @dynamic categoryID;
 @dynamic title;
+@dynamic timeStamp;
 @dynamic relationship;
 
 @end

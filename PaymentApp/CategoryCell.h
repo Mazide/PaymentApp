@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MultiLinesLabel.h"
 
 @interface CategoryCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet MultiLinesLabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end

@@ -10,16 +10,15 @@
 #import <UIKit/UITableView.h>
 
 typedef void (^CellConfigureBlock)(UITableViewCell* cell, id dataObject, NSIndexPath* indexPath);
-typedef NSString* (^CellIdentifierForIndexPathBlock)(NSIndexPath* indexPath);
 
 @interface TableViewProtocolsHandler : NSObject
 
 @property (strong, nonatomic) NSArray* dataObjects;
 @property (copy, nonatomic) CellConfigureBlock cellConfigureBlock;
-@property (copy, nonatomic) CellIdentifierForIndexPathBlock cellIdentifierForIndexPathBlock;
+@property (copy, nonatomic) NSString* cellIdentifier;
 
 - (instancetype)initWithDataObjects:(NSArray*)dataObjects
                cellConfigurateBlock:(CellConfigureBlock)cellConfigurateBlock
-                cellIdentifierBlock:(CellIdentifierForIndexPathBlock)cellIdentifierBlock;
+                     cellIdentifier:(NSString*)cellIdentifier;
 
 @end

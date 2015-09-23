@@ -43,35 +43,48 @@
 
         _requestExecutor = [[RequestExecutor alloc] init];
         _requestCreator  = [[RequestCreator alloc] init];
-        _dataStorage     = [[DataStorage alloc] init];
+        _dataStorage     = [self getDataStorage];
     }
     return self;
 }
 
--(void)downloadAllItemsWithCompletion:(void (^)(NSArray *, NSError *))completion{
-    NSArray*  items = [_dataStorage getItems];
-    if (items.count == 0) {
-        [self loadFromItemsServerWithConpletion:completion];
+- (DataStorage*)getDataStorage{
+   
+    NSString* entityName             = NSStringFromClass([CategoryItem class]);
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timeStamp.timeIntervalSinceReferenceDate" ascending:YES];
+    NSPredicate* predicate           = [NSPredicate predicateWithFormat:@"ANY categoryID == 0"];
+    
+    DataStorage* dataStorage = [[DataStorage alloc] initWithEntity:entityName SortDescriptor:sortDescriptor predicate:predicate];
+    return dataStorage;
+}
+
+- (void)downloadAllItems:(BOOL)flag completion:(void (^)(NSArray* items, NSError* error))completion{
+    NSArray*  items = [_dataStorage getMainCategories];
+    if (items.count == 0 || flag) {
+        [self loadFromItemsServerWithCompletion:completion];
+        NSLog(@"Loaded from Web");
     } else {
         NSLog(@"Loaded from DataStorage");
         completion ? completion(items, nil) : nil;
     }
 }
 
-- (void)loadFromItemsServerWithConpletion:(void (^)(NSArray *, NSError *))completion{
+- (void)loadFromItemsServerWithCompletion:(void (^)(NSArray *, NSError *))completion{
     NSURLRequest* categoriesRequest = [_requestCreator categoriesListRequest];
     
     __weak typeof(self) weakSelf = self;
     [_requestExecutor executeHttpRequest:categoriesRequest withCompletion:^(NSArray* categoriesInfo, NSError* error){
         
+        [weakSelf.dataStorage clean];
+        
         NSMutableArray* categories = [[NSMutableArray alloc] init];
         for (NSDictionary* info in categoriesInfo) {
             
-            CategoryItem* category = (CategoryItem*)[weakSelf.dataStorage createItem];
+            CategoryItem* category = (CategoryItem*)[weakSelf.dataStorage createCategory];
             [category configureWithItemInfo:info dataStorage:weakSelf.dataStorage];
             [categories addObject:category];
         }
-        [weakSelf.dataStorage saveContext];
+        [weakSelf.dataStorage saveChanges];
         
         NSLog(@"Loaded from Web");
         completion ? completion(categories , nil) : nil;

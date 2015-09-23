@@ -11,10 +11,16 @@
 
 @interface DataStorage : NSObject
 
-- (NSArray*)getItems;
+- (instancetype)initWithEntity:(NSString*)entityName
+                SortDescriptor:(NSSortDescriptor*)sortDescriptor
+                     predicate:(NSPredicate*)mainCategotyPredicate;
 
-- (NSManagedObject*)createItem;
+- (NSArray*)getMainCategories;
 
-- (void)saveContext;
+- (NSManagedObject*)createCategory;
+
+- (void)saveChanges;
+
+- (void)clean;
 
 @end

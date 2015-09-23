@@ -12,6 +12,6 @@
 
 + (instancetype)sharedService;
 
-- (void)downloadAllItemsWithCompletion:(void (^)(NSArray* items, NSError* error))completion;
+- (void)downloadAllItems:(BOOL)flag completion:(void (^)(NSArray* items, NSError* error))completion;
 
 @end

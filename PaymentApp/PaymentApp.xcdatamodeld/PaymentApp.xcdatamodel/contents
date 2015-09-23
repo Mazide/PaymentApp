@@ -2,10 +2,11 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CategoryItem" representedClassName="CategoryItem" syncable="YES">
         <attribute name="categoryID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CategoryItem" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CategoryItem" positionX="909" positionY="6732" width="128" height="88"/>
+        <element name="CategoryItem" positionX="909" positionY="6732" width="128" height="103"/>
     </elements>
 </model>
